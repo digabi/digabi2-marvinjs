@@ -1,0 +1,10 @@
+{
+  "version": "1",
+  "singleInstance": true,
+  "cas": false,
+  "appId": "marvinjs",
+  "appName": {
+    "fi-FI": "MarvinJS",
+    "sv-FI": "MarvinJS"
+  }
+}

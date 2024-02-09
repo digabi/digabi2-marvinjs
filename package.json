@@ -1,0 +1,23 @@
+{
+  "name": "abitti2-marvinjs",
+  "version": "0.1.0",
+  "description": "Dockerized MarvinJS",
+  "main": "bin/marvinjs",
+  "scripts": {
+    "docker:build": "docker build . -t abitti-marvinjs",
+    "docker:run": "docker run -p 8080:8080 --network ktpjs_ktpjs_network abitti-marvinjs"
+  },
+  "devDependencies": {
+    "@digabi/typescript-config": "^1.0.0",
+    "@types/dnssd": "^0.4.5",
+    "@types/express": "^4.17.21",
+    "@types/morgan": "^1.9.9",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "dnssd": "^0.4.1",
+    "express": "^4.18.2",
+    "http-proxy-middleware": "^2.0.6",
+    "morgan": "^1.10.0"
+  }
+}
