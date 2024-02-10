@@ -14,12 +14,13 @@ RUN npx tsc --project server
 
 FROM hub.chemaxon.com/cxn-docker-release/chemaxon/mjs-webservice:latest
 
-ENV CHEMAXON_LICENSE_SERVER_URL=https://license.chemaxon.com/ \
-  CHEMAXON_LICENSE_SERVER_KEY=$CHEMAXON_LICENSE_SERVER_KEY
+ARG CHEMAXON_LICENSE_SERVER_KEY
+ENV CHEMAXON_LICENSE_SERVER_KEY=$CHEMAXON_LICENSE_SERVER_KEY
 
 WORKDIR /app
 
 USER root
+ENV DEBIAN_FRONTEND=noninteractive
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 RUN apt-get install -y nodejs
 
