@@ -4,13 +4,13 @@
 const { spawn } = require('child_process');
 const marvinjs = spawn('/app/mjs-webservice/run-mjs-webservice');
 marvinjs.stdout.on('data', (data) => {
-  console.log(`stdout: ${data}`);
+  console.log(data.toString().trimEnd())
 });
 marvinjs.stderr.on('data', (data) => {
-  console.error(`stderr: ${data}`);
+  console.error(`\nERROR: ${data}`);
 });
 marvinjs.on('close', (code) => {
-  console.log(`child process exited with code ${code}`);
+  console.log(`\nchild process exited with code ${code}`);
 });
 
 const server = require('../dist/marvinjs-app').default({ port: 9999 })
