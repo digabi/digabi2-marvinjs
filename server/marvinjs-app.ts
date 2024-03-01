@@ -8,7 +8,7 @@ interface AppParams {
 }
 
 export default function createMarvinJSApp(args: AppParams) {
-  const root = '/apps/marvinjs'
+  const root = '/'
 
   const ad = new dnssd.Advertisement('_http._tcp', args.port, {
     name: 'MarvinJS',
@@ -28,20 +28,7 @@ export default function createMarvinJSApp(args: AppParams) {
     })
   )
 
-  app.use(
-    root,
-    createProxyMiddleware({
-      target: 'http://localhost:8080/',
-      pathRewrite: { '^/apps/marvinjs/': '' },
-      onProxyRes: (proxyRes, _req, _res) => {
-        if (proxyRes.statusCode === 302 && proxyRes.headers['location']) {
-          const location = proxyRes.headers['location']
-          console.log('location:', location)
-          proxyRes.headers['location'] = `/apps/marvinjs/${location}`
-        }
-      }
-    })
-  )
+  app.use(root, createProxyMiddleware({ target: 'http://localhost:8080/' }))
 
   const server = app.listen(args.port)
   ad.start()

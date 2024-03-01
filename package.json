@@ -5,7 +5,7 @@
   "main": "bin/marvinjs",
   "scripts": {
     "docker:build": "docker build . -t abitti-marvinjs",
-    "docker:run": "docker run --env CHEMAXON_LICENSE_SERVER_KEY=${CHEMAXON_LICENSE_SERVER_KEY} --network ktpjs_ktpjs_network abitti-marvinjs"
+    "docker:run": "docker run --env CHEMAXON_LICENSE_SERVER_KEY=${CHEMAXON_LICENSE_SERVER_KEY} --network ktpjs_ktpjs_network --hostname marvinjs abitti-marvinjs"
   },
   "devDependencies": {
     "@digabi/typescript-config": "^1.0.0",
