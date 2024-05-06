@@ -1,5 +1,5 @@
 {
-  "name": "abitti2-marvinjs",
+  "name": "digabi2-marvinjs",
   "version": "0.1.0",
   "description": "Dockerized MarvinJS",
   "main": "bin/marvinjs",

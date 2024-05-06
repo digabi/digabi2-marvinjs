@@ -1,4 +1,4 @@
-# abitti2-marvinjs
+# digabi2-marvinjs
 
 Dockerized MarvinJS
 
